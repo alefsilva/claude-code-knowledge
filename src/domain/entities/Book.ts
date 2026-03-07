@@ -4,14 +4,17 @@ export interface Book {
   id: string
   title: string
   author: string
-  isbn?: string
-  coverUrl?: string
+  summary: string
+  tags: string[]
   status: ReadingStatus
   rating?: number
-  notes?: string
-  pageCount?: number
-  currentPage?: number
-  addedAt: Date
-  finishedAt?: Date
-  tags: string[]
+  createdAt: Date
+}
+
+export enum AgentStatus {
+  IDLE = 'IDLE',
+  ANALYZING = 'ANALYZING',
+  ENRICHING = 'ENRICHING',
+  COMPLETED = 'COMPLETED',
+  ERROR = 'ERROR',
 }
