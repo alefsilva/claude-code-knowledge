@@ -1,0 +1,20 @@
+{
+  "name": "claude-code-knowledge",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/alefsilva/claude-code-knowledge#readme",
+  "bugs": {
+    "url": "https://github.com/alefsilva/claude-code-knowledge/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alefsilva/claude-code-knowledge.git"
+  },
+  "license": "ISC",
+  "author": "Alef Silva",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
