@@ -11,8 +11,14 @@ function deserialize(raw: string): Book[] {
 export class LocalStorageBookRepository implements BookRepository {
   private load(): Book[] {
     if (typeof window === 'undefined') return []
-    const raw = localStorage.getItem(STORAGE_KEY)
-    return raw ? deserialize(raw) : []
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY)
+      return raw ? deserialize(raw) : []
+    } catch (err) {
+      console.error('[LocalStorageBookRepository] Dados corrompidos, limpando storage.', err)
+      localStorage.removeItem(STORAGE_KEY)
+      return []
+    }
   }
 
   private persist(books: Book[]): void {

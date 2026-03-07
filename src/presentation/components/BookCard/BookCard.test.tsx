@@ -7,9 +7,10 @@ const mockBook: Book = {
   id: '1',
   title: 'Dom Casmurro',
   author: 'Machado de Assis',
+  summary: 'Bentinho narra sua história de amor com Capitu.',
+  tags: ['romance', 'literatura-brasileira'],
   status: 'finished',
-  addedAt: new Date(),
-  tags: [],
+  createdAt: new Date(),
 }
 
 describe('BookCard', () => {
@@ -24,7 +25,18 @@ describe('BookCard', () => {
     expect(screen.getByText('Finalizado')).toBeInTheDocument()
   })
 
-  it('renders placeholder icon when no coverUrl', () => {
+  it('renders the summary', () => {
+    render(<BookCard book={mockBook} />)
+    expect(screen.getByText(/Bentinho narra/)).toBeInTheDocument()
+  })
+
+  it('renders tags', () => {
+    render(<BookCard book={mockBook} />)
+    expect(screen.getByText('romance')).toBeInTheDocument()
+    expect(screen.getByText('literatura-brasileira')).toBeInTheDocument()
+  })
+
+  it('does not render rating stars when rating is not set', () => {
     render(<BookCard book={mockBook} />)
     expect(screen.queryByRole('img')).not.toBeInTheDocument()
   })

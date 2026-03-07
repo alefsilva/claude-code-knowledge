@@ -1,4 +1,3 @@
-import { randomUUID } from 'crypto'
 import type { Book } from '@/domain/entities/Book'
 import { AgentStatus } from '@/domain/entities/Book'
 
@@ -88,7 +87,7 @@ export async function enrichBook(
   const { author, summary, tags } = inferEnrichment(title)
 
   const book: Book = {
-    id: randomUUID(),
+    id: globalThis.crypto.randomUUID(),
     title,
     author,
     summary,
