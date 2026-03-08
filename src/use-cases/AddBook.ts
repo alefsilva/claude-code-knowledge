@@ -1,13 +1,10 @@
 import type { Book } from '@/domain/entities/Book'
 import type { BookRepository } from '@/domain/interfaces/BookRepository'
-import { randomUUID } from 'crypto'
 
 export interface AddBookInput {
   title: string
   author: string
-  isbn?: string
-  coverUrl?: string
-  pageCount?: number
+  summary?: string
   tags?: string[]
 }
 
@@ -16,15 +13,12 @@ export async function addBook(
   input: AddBookInput
 ): Promise<Book> {
   const book: Book = {
-    id: randomUUID(),
+    id: globalThis.crypto.randomUUID(),
     title: input.title.trim(),
     author: input.author.trim(),
-    isbn: input.isbn,
-    coverUrl: input.coverUrl,
+    summary: input.summary ?? '',
     status: 'to-read',
-    pageCount: input.pageCount,
-    currentPage: 0,
-    addedAt: new Date(),
+    createdAt: new Date(),
     tags: input.tags ?? [],
   }
   return repository.save(book)
