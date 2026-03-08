@@ -1,0 +1,1 @@
+Conte uma piada curta e criativa sobre o projeto "claude-code-knowledge" — um repositório Node.js que ainda está vazio, mas que tem grandes ambições de ensinar tudo sobre o Claude Code. A piada deve fazer referência ao nome do projeto ou à sua situação atual (projeto em branco cheio de potencial). Seja bem-humorado e direto.
