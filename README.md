@@ -83,7 +83,7 @@ IDLE ──► ANALYZING ──► ENRICHING ──► COMPLETED
 |--------|---------|----------------|
 | `IDLE` | — | Estado padrão, aguardando input |
 | `ANALYZING` | 1 000 ms | Agente "lê" o título — callback disparado sincronamente |
-| `ENRICHING` | 1 500 ms | Agente "gera" metadados — inferência por catálogo ou fallback genérico |
+| `ENRICHING` | 1 500 ms | Agente "gera" metadados — autor, resumo, tags e nota (3–5) inferidos por catálogo ou fallback genérico |
 | `COMPLETED` | 2 000 ms | Livro persistido, toast exibido, estado volta a IDLE |
 | `ERROR` | 2 000 ms | Falha capturada no `useLibrary`, toast de erro, estado volta a IDLE |
 
@@ -181,7 +181,7 @@ O deploy é automático via **GitHub Actions** ao fazer push na branch `master`.
 | **Slate** | Backgrounds, texto e bordas neutras |
 | **Indigo** | Brand, botões, estados ativos, nome do autor |
 | **Emerald** | Status "Finalizado", barra de progresso completa |
-| **Amber** | Estrelas de avaliação |
+| **Amber** | Estrelas de avaliação — nota de 3–5 gerada pelo agente como "sentimento social" inferido do título |
 
 ---
 
