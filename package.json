@@ -8,6 +8,7 @@
     "build": "next build",
     "export": "next build",
     "start": "next start",
+    "lint": "next lint",
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:run": "vitest run"
@@ -31,6 +32,8 @@
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.0",
     "@vitest/ui": "^1.6.0",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "^14.2.0",
     "jsdom": "^24.1.0",
     "typescript": "^5.5.0",
     "vitest": "^1.6.0"
