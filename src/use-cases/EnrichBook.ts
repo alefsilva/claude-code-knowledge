@@ -54,6 +54,11 @@ const ENRICHMENT_CATALOG: Record<
   },
 }
 
+/** Gera nota de 3 a 5 como "sentimento social" inferido pelo agente */
+function inferRating(): number {
+  return Math.floor(Math.random() * 3) + 3
+}
+
 function inferEnrichment(title: string): {
   author: string
   summary: string
@@ -92,6 +97,7 @@ export async function enrichBook(
     author,
     summary,
     tags,
+    rating: inferRating(),
     status: 'to-read',
     createdAt: new Date(),
   }

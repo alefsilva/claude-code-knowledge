@@ -45,6 +45,8 @@ describe('enrichBook use case', () => {
     expect(book.status).toBe('to-read')
     expect(book.createdAt).toBeInstanceOf(Date)
     expect(book.id).toBeTruthy()
+    expect(book.rating).toBeGreaterThanOrEqual(3)
+    expect(book.rating).toBeLessThanOrEqual(5)
   })
 
   it('returns a fallback Book for an unknown title', async () => {
